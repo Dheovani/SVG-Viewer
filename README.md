@@ -1,71 +1,41 @@
-# svg-visualizer README
+# 🖼️ SVG Viewer for VSCode
 
-This is the README for your extension "svg-visualizer". After writing up a brief description, we recommend including the following sections.
+[![Version](https://vsmarketplacebadge.apphb.com/version/YOUR_EXTENSION_ID.svg)](https://marketplace.visualstudio.com/items?itemName=YOUR_EXTENSION_ID)
+[![Installs](https://vsmarketplacebadge.apphb.com/installs/YOUR_EXTENSION_ID.svg)](https://marketplace.visualstudio.com/items?itemName=YOUR_EXTENSION_ID)
+[![Rating](https://vsmarketplacebadge.apphb.com/rating/YOUR_EXTENSION_ID.svg)](https://marketplace.visualstudio.com/items?itemName=YOUR_EXTENSION_ID)
 
-## Features
+Welcome to the SVG Viewer extension for Visual Studio Code! 🎉
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+![Demo]()
 
-For example if there is an image subfolder under your extension project workspace:
+## 🚀 Features
 
-\!\[feature X\]\(images/feature-x.png\)
+- Allows you to view SVG images directly within VSCode.
+- No need to open external applications to see your SVG files.
+- Simplifies your workflow when working with SVG assets.
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+## 💡 How to Use
 
-## Requirements
+1. Install the extension from the [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/items?itemName=YOUR_EXTENSION_ID).
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+2. Open a folder or workspace in VSCode.
 
-## Extension Settings
+3. Simply click on an SVG image file in the file explorer.
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+4. The SVG image will be displayed in a new tab within VSCode, allowing you to view and interact with it.
 
-For example:
+5. Enjoy the convenience of visualizing SVG files without leaving your code editor! 🖼️
 
-This extension contributes the following settings:
+## 🤝 Contributing
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+Contributions are welcome! If you find any issues or have suggestions for improvements, please feel free to [open an issue](https://github.com/Dheovani/SVG-Visualizer/issues) or [create a pull request](https://github.com/Dheovani/SVG-Visualizer/pulls).
 
-## Known Issues
+## 📝 License
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+This project is licensed under the MIT License. See the [LICENSE.md](LICENSE.md) file for details.
 
-## Release Notes
+## 📢 Feedback
 
-Users appreciate release notes as you update your extension.
+If you have any feedback or questions, feel free to [reach out](mailto:dheovani_xavier@outlook.com)..
 
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+Happy coding! 🚀
