@@ -6,7 +6,7 @@
 
 Welcome to the SVG Viewer extension for Visual Studio Code! 🎉
 
-![Demo]()
+[Demo](https://github.com/Dheovani/SVG-Visualizer/assets/79609196/e9ab75df-c48c-4a6c-a125-5952a0e16e68)
 
 ## 🚀 Features
 
@@ -32,7 +32,7 @@ Contributions are welcome! If you find any issues or have suggestions for improv
 
 ## 📝 License
 
-This project is licensed under the MIT License. See the [LICENSE.md](LICENSE.md) file for details.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ## 📢 Feedback
 
