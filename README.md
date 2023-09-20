@@ -1,8 +1,8 @@
 # 🖼️ SVG Viewer for VSCode
 
-[![Version](https://vsmarketplacebadge.apphb.com/version/YOUR_EXTENSION_ID.svg)](https://marketplace.visualstudio.com/items?itemName=YOUR_EXTENSION_ID)
-[![Installs](https://vsmarketplacebadge.apphb.com/installs/YOUR_EXTENSION_ID.svg)](https://marketplace.visualstudio.com/items?itemName=YOUR_EXTENSION_ID)
-[![Rating](https://vsmarketplacebadge.apphb.com/rating/YOUR_EXTENSION_ID.svg)](https://marketplace.visualstudio.com/items?itemName=YOUR_EXTENSION_ID)
+[![Version](https://vsmarketplacebadge.apphb.com/version/svg-visualizer.svg)](https://marketplace.visualstudio.com/items?itemName=svg-visualizer)
+[![Installs](https://vsmarketplacebadge.apphb.com/installs/svg-visualizer.svg)](https://marketplace.visualstudio.com/items?itemName=svg-visualizer)
+[![Rating](https://vsmarketplacebadge.apphb.com/rating/svg-visualizer.svg)](https://marketplace.visualstudio.com/items?itemName=svg-visualizer)
 
 Welcome to the SVG Viewer extension for Visual Studio Code! 🎉
 
@@ -16,7 +16,7 @@ Welcome to the SVG Viewer extension for Visual Studio Code! 🎉
 
 ## 💡 How to Use
 
-1. Install the extension from the [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/items?itemName=YOUR_EXTENSION_ID).
+1. Install the extension from the [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/items?itemName=svg-visualizer).
 
 2. Open a folder or workspace in VSCode.
 
