@@ -1,9 +1,5 @@
 # 🖼️ SVG Viewer for VSCode
 
-[![Version](https://vsmarketplacebadge.apphb.com/version/svg-visualizer.svg)](https://marketplace.visualstudio.com/items?itemName=svg-visualizer)
-[![Installs](https://vsmarketplacebadge.apphb.com/installs/svg-visualizer.svg)](https://marketplace.visualstudio.com/items?itemName=svg-visualizer)
-[![Rating](https://vsmarketplacebadge.apphb.com/rating/svg-visualizer.svg)](https://marketplace.visualstudio.com/items?itemName=svg-visualizer)
-
 Welcome to the SVG Viewer extension for Visual Studio Code! 🎉
 
 [Demo](https://github.com/Dheovani/SVG-Visualizer/assets/79609196/e9ab75df-c48c-4a6c-a125-5952a0e16e68)
