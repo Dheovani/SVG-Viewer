@@ -1,6 +1,6 @@
 {
   "name": "svg-viewer",
-  "displayName": "SVG Viewer",
+  "displayName": "SVG-Viewer",
   "description": "JS SVG viewer for VSCode",
   "author": {
     "name": "Dheovani Xavier da Cruz",
