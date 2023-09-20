@@ -12,7 +12,7 @@ Welcome to the SVG Viewer extension for Visual Studio Code! 🎉
 
 ## 💡 How to Use
 
-1. Install the extension from the [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/items?itemName=svg-visualizer).
+1. Install the extension from the [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/items?itemName=Dheovani.svg-viewer).
 
 2. Open a folder or workspace in VSCode.
 
