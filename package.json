@@ -3,6 +3,8 @@
   "displayName": "SVG Visualizer",
   "description": "JS SVG visualizer for VSCode",
   "version": "0.0.1",
+  "author": "Dheovani Xavier da Cruz",
+  "repository": "https://github.com/Dheovani/SVG-Visualizer",
   "engines": {
     "vscode": "^1.82.0"
   },
