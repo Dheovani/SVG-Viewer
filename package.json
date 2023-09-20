@@ -9,7 +9,7 @@
   "publisher": "Dheovani",
   "repository": "https://github.com/Dheovani/SVG-Viewer",
   "icon": "icon/icon.png",
-  "version": "0.0.1",
+  "version": "1.0.1",
   "engines": {
     "vscode": "^1.82.0"
   },
