@@ -2,9 +2,13 @@
   "name": "svg-visualizer",
   "displayName": "SVG Visualizer",
   "description": "JS SVG visualizer for VSCode",
-  "author": "Dheovani Xavier da Cruz",
+  "author": {
+    "name": "Dheovani Xavier da Cruz",
+    "email": "dheovani_xavier@outlook.com"
+  },
   "publisher": "Dheovani",
   "repository": "https://github.com/Dheovani/SVG-Visualizer",
+  "icon": "icon/icon.png",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.82.0"
