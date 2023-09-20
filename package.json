@@ -6,6 +6,8 @@
   "publisher": "Dheovani",
   "repository": "https://github.com/Dheovani/SVG-Visualizer",
   "version": "0.0.1",
+  "author": "Dheovani Xavier da Cruz",
+  "repository": "https://github.com/Dheovani/SVG-Visualizer",
   "engines": {
     "vscode": "^1.82.0"
   },
