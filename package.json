@@ -9,7 +9,7 @@
   "publisher": "Dheovani",
   "repository": "https://github.com/Dheovani/SVG-Viewer",
   "icon": "icon/icon.png",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "engines": {
     "vscode": "^1.82.0"
   },
@@ -21,8 +21,8 @@
   "contributes": {
     "commands": [
       {
-        "command": "svg-visualizer.helloWorld",
-        "title": "Hello World"
+        "command": "extension.openExtensionPage",
+        "title": "Open Extension's Page in the Marketplace"
       }
     ]
   },

@@ -1,6 +1,7 @@
 import * as vscode from 'vscode';
 
 let panel: vscode.WebviewPanel | undefined;
+let statusBarItem: vscode.StatusBarItem | undefined;
 
 function isSVGFile(fileName: string): boolean {
 	const fileExtension = fileName.split('.').pop()?.toLowerCase();
@@ -26,21 +27,31 @@ function updateWebviewContent(fileName: string): void {
 }
 
 export function activate(context: vscode.ExtensionContext) {
+
 	// Customize statusbar
-	const statusBarItem: vscode.StatusBarItem = vscode.window.createStatusBarItem(
+	statusBarItem = vscode.window.createStatusBarItem(
 		vscode.StatusBarAlignment.Left,
 		10000
 	);
 
 	statusBarItem.text = "SVG-Viewer";
 	statusBarItem.tooltip = "Looking for SVG files";
+	statusBarItem.command = "extension.openExtensionPage";
 	statusBarItem.show();
+
+	// Open extension's page on click over statusbar item
+	const openExtensionPageCommand = vscode.commands.registerCommand('extension.openExtensionPage', () => {
+		const extensionPageUrl = `vscode:extension/Dheovani.svg-viewer`;
+		vscode.env.openExternal(vscode.Uri.parse(extensionPageUrl));
+	});
 
 	// Create tab rendering svg on click in svg file
 	const openTextDocDisposable = vscode.workspace.onDidOpenTextDocument(document => {
 		const fileName: string = document.fileName;
 
 		if (isSVGFile(fileName)) {
+			panel?.reveal(vscode.ViewColumn.One);
+
 			if (!panel) {
 				panel = vscode.window.createWebviewPanel(
 					'SVG-Viewer',
@@ -51,8 +62,6 @@ export function activate(context: vscode.ExtensionContext) {
 
 				// Delete panel on dispose so it will be created again when another SVG file is opened
 				panel.onDidDispose(() => panel = undefined);
-			} else {
-				panel.reveal(vscode.ViewColumn.One);
 			}
 
 			updateWebviewContent(fileName);
@@ -60,11 +69,17 @@ export function activate(context: vscode.ExtensionContext) {
 	});
 
 	context.subscriptions.push(statusBarItem);
+	context.subscriptions.push(openExtensionPageCommand);
 	context.subscriptions.push(openTextDocDisposable);
+	
 }
 
-export function deactivate() {}
+export function deactivate() {
+	panel?.dispose();
+	statusBarItem?.dispose();
+}
 
 module.exports = {
-    activate
+    activate,
+	deactivate
 };

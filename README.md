@@ -32,6 +32,6 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## 📢 Feedback
 
-If you have any feedback or questions, feel free to [reach out](mailto:dheovani_xavier@outlook.com)..
+If you have any feedback or questions, feel free to [reach out](mailto:dheovani_xavier@outlook.com).
 
 Happy coding! 🚀
