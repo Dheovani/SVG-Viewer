@@ -3,6 +3,28 @@ import * as vscode from 'vscode';
 let panel: vscode.WebviewPanel | undefined;
 let statusBarItem: vscode.StatusBarItem | undefined;
 
+const bodyStyle = `
+	background-color: white;
+	background-image: 
+		linear-gradient(45deg, lightgray 25%, transparent 25%, transparent 75%, lightgray 75%, lightgray),
+		linear-gradient(45deg, lightgray 25%, transparent 25%, transparent 75%, lightgray 75%, lightgray);
+	background-size: 20px 20px;
+	background-position:0 0, 10px 10px;
+`;
+
+const divStyle = `
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+`;
+
+const imgStyle = `
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+`;
+
 function isSVGFile(fileName: string): boolean {
 	const fileExtension = fileName.split('.').pop()?.toLowerCase();
 	return fileExtension === 'svg';
@@ -18,8 +40,10 @@ function updateWebviewContent(fileName: string): void {
                 <head>
                     <title>SVG-Viewer</title>
                 </head>
-                <body>
-					<img src="${fileWebviewUri}" alt="SVG" width="500" height="500">
+                <body style="${bodyStyle}">
+					<div style="${divStyle}">
+						<img src="${fileWebviewUri}" alt="SVG" style="${imgStyle}">
+					</div>
                 </body>
             </html>
         `;
