@@ -70,13 +70,18 @@ export function activate(context: vscode.ExtensionContext) {
 	});
 
 	// Create tab rendering svg on click in svg file
-	const openTextDocDisposable = vscode.workspace.onDidOpenTextDocument(document => {
+	const openTextDocDisposable = vscode.workspace.onDidOpenTextDocument(async (document) => {
 		const fileName: string = document.fileName;
 
 		if (isSVGFile(fileName)) {
 			panel?.reveal(vscode.ViewColumn.One);
 
 			if (!panel) {
+				const selectedOption = await vscode.window.showInformationMessage("Open preview?", "Yes", "No");
+				
+				if (selectedOption === "No")
+					return;
+
 				panel = vscode.window.createWebviewPanel(
 					'SVG-Viewer',
 					'SVG-Viewer',
@@ -84,7 +89,7 @@ export function activate(context: vscode.ExtensionContext) {
 					{ enableScripts: true }
 				);
 
-				// Delete panel on dispose so it will be created again when another SVG file is opened
+				// Deletar o painel ao ser descartado para que ele seja criado novamente quando outro arquivo SVG for aberto
 				panel.onDidDispose(() => panel = undefined);
 			}
 
