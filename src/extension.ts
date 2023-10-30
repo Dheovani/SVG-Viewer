@@ -25,11 +25,20 @@ const imgStyle = `
 	object-fit: contain;
 `;
 
+/**
+ * Checks if file is and SVG
+ * @param fileName: string
+ * @returns: boolean
+ */
 function isSVGFile(fileName: string): boolean {
 	const fileExtension = fileName.split('.').pop()?.toLowerCase();
 	return fileExtension === 'svg';
 }
 
+/**
+ * Generates the webview content
+ * @param fileName: string
+ */
 function updateWebviewContent(fileName: string): void {
     if (panel) {
         const fileUri = vscode.Uri.file(fileName);
@@ -50,8 +59,29 @@ function updateWebviewContent(fileName: string): void {
     }
 }
 
-export function activate(context: vscode.ExtensionContext) {
+/**
+ * Opens the SVG file viewer
+ * @param fileName: string
+ */
+async function openViewer(fileName: string): Promise<void> {
+	panel?.reveal(vscode.ViewColumn.One);
 
+	if (!panel) {
+		panel = vscode.window.createWebviewPanel(
+			'SVG-Viewer',
+			'SVG-Viewer',
+			vscode.ViewColumn.One,
+			{ enableScripts: true }
+		);
+
+		// Delete panel on dispose
+		panel.onDidDispose(() => panel = undefined);
+	}
+
+	updateWebviewContent(fileName);
+}
+
+export function activate(context: vscode.ExtensionContext): void {
 	// Customize statusbar
 	statusBarItem = vscode.window.createStatusBarItem(
 		vscode.StatusBarAlignment.Left,
@@ -69,41 +99,47 @@ export function activate(context: vscode.ExtensionContext) {
 		vscode.env.openExternal(vscode.Uri.parse(extensionPageUrl));
 	});
 
+	// Open preview with command 'ctrl+shift+t' when text editor is open in an svg file
+	const openPreviewOnFocusCommand = vscode.commands.registerCommand('extension.openPreviewOnFocus', () => {
+		const activeTextEditor = vscode.window.activeTextEditor;
+
+		if (activeTextEditor) {
+			openViewer(activeTextEditor.document.fileName);
+		} else {
+			vscode.window.showInformationMessage("There's no open textfile.");
+		}
+	});
+
+	// Open preview with mouse's right button
+	const openPreviewMenuCommand = vscode.commands.registerCommand('extension.openPreviewMenu', (resource) => {
+		if (resource)
+			openViewer(resource.fsPath);
+	});
+
 	// Create tab rendering svg on click in svg file
 	const openTextDocDisposable = vscode.workspace.onDidOpenTextDocument(async (document) => {
 		const fileName: string = document.fileName;
 
 		if (isSVGFile(fileName)) {
-			panel?.reveal(vscode.ViewColumn.One);
-
-			if (!panel) {
-				const selectedOption = await vscode.window.showInformationMessage("Open preview?", "Yes", "No");
-				
-				if (selectedOption === "No")
-					return;
-
-				panel = vscode.window.createWebviewPanel(
-					'SVG-Viewer',
-					'SVG-Viewer',
-					vscode.ViewColumn.One,
-					{ enableScripts: true }
-				);
-
-				// Deletar o painel ao ser descartado para que ele seja criado novamente quando outro arquivo SVG for aberto
-				panel.onDidDispose(() => panel = undefined);
-			}
-
-			updateWebviewContent(fileName);
+			const selectedOption = !panel
+				? await vscode.window.showInformationMessage("Open preview?", "Yes", "No")
+				: "Yes";
+			
+			if (selectedOption !== "Yes")
+				return;
+			
+			openViewer(fileName);
 		}
 	});
 
 	context.subscriptions.push(statusBarItem);
 	context.subscriptions.push(openExtensionPageCommand);
+	context.subscriptions.push(openPreviewOnFocusCommand);
+	context.subscriptions.push(openPreviewMenuCommand);
 	context.subscriptions.push(openTextDocDisposable);
-	
 }
 
-export function deactivate() {
+export function deactivate(): void {
 	panel?.dispose();
 	statusBarItem?.dispose();
 }

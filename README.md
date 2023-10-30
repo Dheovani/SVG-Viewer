@@ -16,7 +16,13 @@ Welcome to the SVG Viewer extension for Visual Studio Code! 🎉
 
 2. Open a folder or workspace in VSCode.
 
-3. Simply click on an SVG image file in the file explorer.
+3. Choose one of the following:
+
+    1. Click on a SVG file and select "Yes" on the message displayed
+
+    2. Right-button click on the image you want to see and select `Open preview`
+
+    3. Click on a SVG file and press `ctrl+shift+t`
 
 4. The SVG image will be displayed in a new tab within VSCode, allowing you to view and interact with it.
 

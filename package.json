@@ -9,7 +9,7 @@
   "publisher": "Dheovani",
   "repository": "https://github.com/Dheovani/SVG-Viewer",
   "icon": "icon/icon.png",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "engines": {
     "vscode": "^1.82.0"
   },
@@ -23,8 +23,33 @@
       {
         "command": "extension.openExtensionPage",
         "title": "Open Extension's Page in the Marketplace"
+      },
+      {
+        "command": "extension.openPreviewOnFocus",
+        "title": "Open Preview"
+      },
+      {
+        "command": "extension.openPreviewMenu",
+        "title": "Open preview"
       }
-    ]
+    ],
+    "keybindings": [
+      {
+        "key": "ctrl+shift+t",
+        "command": "extension.openPreviewOnFocus",
+        "when": "editorTextFocus",
+        "mac": "cmd+shift+t"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "when": "resourceFilename =~ /.*\\.svg$/",
+          "command": "extension.openPreviewMenu",
+          "group": "navigation"
+        }
+      ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
