@@ -31,6 +31,14 @@
       {
         "command": "extension.openPreviewMenu",
         "title": "Open preview"
+      },
+      {
+        "command": "extension.openPreviewOnEditorShortcut",
+        "title": "Open preview",
+        "icon": {
+            "light": "icon/icon_light.svg",
+            "dark": "icon/icon.svg"
+        }
       }
     ],
     "keybindings": [
@@ -42,6 +50,13 @@
       }
     ],
     "menus": {
+      "editor/title": [
+        {
+          "when": "resourceFilename =~ /.*\\.svg$/",
+          "command": "extension.openPreviewOnEditorShortcut",
+          "group": "navigation"
+        }
+      ],
       "explorer/context": [
         {
           "when": "resourceFilename =~ /.*\\.svg$/",

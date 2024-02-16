@@ -116,6 +116,12 @@ export function activate(context: vscode.ExtensionContext): void {
 			openViewer(resource.fsPath);
 	});
 
+	// Open using editor title button
+	const openPreviewOnEditorButton = vscode.commands.registerCommand('extension.openPreviewOnEditorShortcut', (resource) => {
+		if (resource)
+			openViewer(resource.fsPath);
+	});
+
 	// Create tab rendering svg on click in svg file
 	const openTextDocDisposable = vscode.workspace.onDidOpenTextDocument(async (document) => {
 		const fileName: string = document.fileName;
@@ -136,6 +142,7 @@ export function activate(context: vscode.ExtensionContext): void {
 	context.subscriptions.push(openExtensionPageCommand);
 	context.subscriptions.push(openPreviewOnFocusCommand);
 	context.subscriptions.push(openPreviewMenuCommand);
+	context.subscriptions.push(openPreviewOnEditorButton);
 	context.subscriptions.push(openTextDocDisposable);
 }
 
